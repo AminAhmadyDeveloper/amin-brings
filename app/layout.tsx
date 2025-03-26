@@ -32,8 +32,8 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
 
   return (
     <html
-      lang="fa"
-      dir="rtl"
+      lang="en"
+      dir="ltr"
       suppressContentEditableWarning
       suppressHydrationWarning
     >

@@ -12,9 +12,9 @@ export const Footer: FC<ReactHtmlElement> = ({ className, ...props }) => {
       <div className="flex items-center p-0">
         <CodeIcon className="me-2 size-6" />
         <p className="text-sm">
-          برنامه نویسی شده توسط{' '}
+          Developed by{' '}
           <a className="underline underline-offset-4" href={twitterUrl}>
-            تیم سالنم
+            Amin Ahmady
           </a>
           .
         </p>

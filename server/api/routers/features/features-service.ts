@@ -3,40 +3,111 @@ import { publicProcedure } from '@/trpc/server';
 export const listOfFeatures = publicProcedure.query(() => {
   return [
     {
-      name: 'مدیریت مشتریان',
-      description:
-        'با قابلیت‌های پیشرفته، می‌توانید تمامی اطلاعات مشتریان خود را به راحتی مدیریت کنید. از تاریخچه ملاقات‌ها تا یادآوری‌های مهم، همه‌چیز در یک جا در دسترس است.',
-      logo: 'TablerUsersGroup',
+      name: 'Next.js',
+      description: 'The React Framework for Production',
+      logo: 'NextjsIcon',
     },
     {
-      name: 'نوبت‌دهی آنلاین',
-      description:
-        'مشتریان می‌توانند به راحتی از طریق وب‌سایت یا اپلیکیشن شما نوبت بگیرند. این ویژگی باعث صرفه‌جویی در وقت و افزایش راحتی برای مشتریان می‌شود.',
-      logo: 'TablerCalendarCheck',
+      name: 'React.js',
+      description: 'Server and client components.',
+      logo: 'ReactJs',
     },
     {
-      name: 'مدیریت خدمات',
+      name: 'Authentication',
       description:
-        'فهرستی کامل از خدمات خود را به همراه قیمت‌ها و توضیحات مربوطه مدیریت کنید. می‌توانید خدمات جدید اضافه کنید و یا اطلاعات موجود را ویرایش کنید.',
-      logo: 'TablerHotelService',
+        'Credential authentication with password reset and email validation',
+      logo: 'LuciaAuth',
     },
     {
-      name: 'گزارش‌ گیری و تحلیل',
-      description:
-        'با استفاده از گزارش‌های دقیق، می‌توانید عملکرد کسب‌وکار خود را تحلیل کنید. از تعداد نوبت‌ها تا درآمد، همه اطلاعات به صورت بصری قابل مشاهده است.',
-      logo: 'TablerChartDonut',
+      name: 'Database',
+      description: 'Drizzle with postgres database',
+      logo: 'Drizzle',
     },
     {
-      name: 'ارتباط با مشتریان',
-      description:
-        'با ارسال پیامک‌ها یا ایمیل‌های خودکار، می‌توانید با مشتریان خود در ارتباط باشید. این ارتباط به حفظ مشتریان و افزایش رضایت آن‌ها کمک می‌کند.',
-      logo: 'TablerBubbleText',
+      name: 'TypeSafe Backend',
+      description: 'Preserve type safety from backend to frontend with tRPC',
+      logo: 'TRPC',
     },
     {
-      name: 'نرم‌افزار کاربرپسند',
+      name: 'Subscription',
+      description: 'Subscription with stripe',
+      logo: 'StripeLogo',
+    },
+    {
+      name: 'Tailwindcss',
+      description: 'Simple and elegant UI components built with Tailwind CSS',
+      logo: 'TailwindCss',
+    },
+    {
+      name: 'Shadcn UI',
+      description: 'A set of beautifully designed UI components for React',
+      logo: 'ShadcnUi',
+    },
+    {
+      name: 'React Email',
+      description: 'Write emails in React with ease.',
+      logo: 'ReactEmail',
+    },
+    {
+      name: 'Hook Form',
+      description: 'Better forms with hook form',
+      logo: 'SimpleIconsReacthookform',
+    },
+    {
+      name: 'Upstash Redis',
+      description: 'Used Upstash powerful client for redis cache',
+      logo: 'Upstash',
+    },
+    {
+      name: 'Auto Form',
+      description: 'Create your forms automatically form your schema',
+      logo: 'LightningBoltIcon',
+    },
+    {
+      name: 'Argon2',
+      description: 'Unleash real power of encryption with argon 2',
+      logo: 'HealthiconsChemicalBurn',
+    },
+    {
+      name: 'Tanstack Query',
+      description: 'always-up-to-date auto-managed queries and mutations.',
+      logo: 'LogosReactQueryIcon',
+    },
+    {
+      name: 'Geist',
+      description: 'Vercel standard theme really perfect',
+      logo: 'FontFamilyIcon',
+    },
+    {
+      name: 'ZOD',
       description:
-        'رابط کاربری ساده و قابل فهم به شما این امکان را می‌دهد که به راحتی با نرم‌افزار کار کنید و به سرعت به اطلاعات مورد نیاز خود دسترسی پیدا کنید.',
-      logo: 'TablerBrandRadixUi',
+        'Zod is a TypeScript-first schema declaration and validation library.',
+      logo: 'SimpleIconsZod',
+    },
+    {
+      name: 'OFetch',
+      description: 'A better fetch API. Works on node, browser, and workers.',
+      logo: 'WebhookIcon',
+    },
+    {
+      name: 'Resend',
+      description: 'Send mail easy as they never been',
+      logo: 'AtSignIcon',
+    },
+    {
+      name: 'Super JSON',
+      description: 'not just json!',
+      logo: 'NoniconsJson16',
+    },
+    {
+      name: 'Magic Regexp (Removed)',
+      description: 'A compiled-away, type-safe, readable RegExp alternative',
+      logo: 'UnjsMagicRegexp',
+    },
+    {
+      name: 'Uploadthing',
+      description: 'UploadThing is the easiest way to file uploads.',
+      logo: 'UploadthingIcon',
     },
   ];
 });

@@ -1,11 +1,10 @@
 'use client';
 
 import { MenuSquareIcon, StarIcon } from 'lucide-react';
-import type { FC } from 'react';
+import { type FC, Fragment } from 'react';
 
 import Link from 'next/link';
 
-import { ProfileDropDown } from '@/components/layout/profile-drop-down';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -20,8 +19,8 @@ import { cn } from '@/libraries/tailwind-utils';
 import { useSession } from '@/providers/session-provider';
 
 const routes: { name: string; href: string }[] = [
-  { name: 'صفحه اصلی', href: '/' },
-  { name: 'مدیریت', href: '/dashboard' },
+  { name: 'Home', href: '/' },
+  { name: 'Dashboard', href: '/dashboard' },
 ] as const;
 
 interface HeaderProps {
@@ -67,7 +66,7 @@ export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
             href="/"
           >
             <StarIcon className="me-2 size-5" />
-            سالنم
+            Amin Brings
           </Link>
           <Show show={!hideNavigationMenu}>
             <nav className="ms-10 hidden gap-4 sm:gap-6 md:flex">
@@ -89,9 +88,9 @@ export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
           <div className="ms-auto flex gap-2">
             <Switcher next={!!session?.session}>
               <Button asChild>
-                <Link href="/login">ورود</Link>
+                <Link href="/login">Login</Link>
               </Button>
-              <ProfileDropDown />
+              <Fragment />
             </Switcher>
           </div>
         </div>

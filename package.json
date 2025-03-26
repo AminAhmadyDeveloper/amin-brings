@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --edit",
+    "husky": "husky",
+    "prepare": "gulp"
   },
   "dependencies": {
     "@autoform/react": "^3.0.0",

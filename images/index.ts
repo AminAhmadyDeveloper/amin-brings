@@ -1,4 +1,4 @@
-import salonamDemoDark from '@/images/salonam-demo-dark.jpg';
-import salonamDemoLight from '@/images/salonam-demo-light.jpg';
+import dark from '@/images/dark.png';
+import light from '@/images/light.png';
 
-export { salonamDemoDark, salonamDemoLight };
+export { dark, light };
