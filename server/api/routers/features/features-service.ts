@@ -5,23 +5,28 @@ export const listOfFeatures = publicProcedure.query(() => {
     {
       name: 'Next.js',
       description: 'The React Framework for Production',
-      logo: 'NextjsIcon',
+      logo: 'NextJS',
     },
     {
       name: 'React.js',
       description: 'Server and client components.',
-      logo: 'ReactJs',
+      logo: 'React',
+    },
+    {
+      name: 'Shadcn/ui',
+      description: 'A set of beautifully-designed, accessible components.',
+      logo: 'ShadcnUi',
     },
     {
       name: 'Authentication',
       description:
         'Credential authentication with password reset and email validation',
-      logo: 'LuciaAuth',
+      logo: 'BetterAuth',
     },
     {
       name: 'Database',
       description: 'Drizzle with postgres database',
-      logo: 'Drizzle',
+      logo: 'DrizzleOrm',
     },
     {
       name: 'TypeSafe Backend',
@@ -29,85 +34,101 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'TRPC',
     },
     {
-      name: 'Subscription',
-      description: 'Subscription with stripe',
-      logo: 'StripeLogo',
-    },
-    {
       name: 'Tailwindcss',
       description: 'Simple and elegant UI components built with Tailwind CSS',
-      logo: 'TailwindCss',
+      logo: 'TailwindCSS',
     },
     {
-      name: 'Shadcn UI',
-      description: 'A set of beautifully designed UI components for React',
-      logo: 'ShadcnUi',
+      name: 'React Query',
+      description: 'Always-up-to-date auto-managed queries and mutations.',
+      logo: 'ReactQuery',
     },
     {
-      name: 'React Email',
-      description: 'Write emails in React with ease.',
-      logo: 'ReactEmail',
-    },
-    {
-      name: 'Hook Form',
-      description: 'Better forms with hook form',
-      logo: 'SimpleIconsReacthookform',
-    },
-    {
-      name: 'Upstash Redis',
-      description: 'Used Upstash powerful client for redis cache',
-      logo: 'Upstash',
-    },
-    {
-      name: 'Auto Form',
-      description: 'Create your forms automatically form your schema',
-      logo: 'LightningBoltIcon',
-    },
-    {
-      name: 'Argon2',
-      description: 'Unleash real power of encryption with argon 2',
-      logo: 'HealthiconsChemicalBurn',
-    },
-    {
-      name: 'Tanstack Query',
-      description: 'always-up-to-date auto-managed queries and mutations.',
-      logo: 'LogosReactQueryIcon',
-    },
-    {
-      name: 'Geist',
-      description: 'Vercel standard theme really perfect',
-      logo: 'FontFamilyIcon',
+      name: 'React Hooks Form',
+      description:
+        'React Hook Form is a tiny library that simplifies form building.',
+      logo: 'ReactHookForm',
     },
     {
       name: 'ZOD',
       description:
         'Zod is a TypeScript-first schema declaration and validation library.',
-      logo: 'SimpleIconsZod',
+      logo: 'Zod',
     },
     {
-      name: 'OFetch',
-      description: 'A better fetch API. Works on node, browser, and workers.',
-      logo: 'WebhookIcon',
+      name: 'Auto Form',
+      description: 'Create your forms automatically from your schema',
+      logo: 'AutoForm',
     },
     {
-      name: 'Resend',
-      description: 'Send mail easy as they never been',
-      logo: 'AtSignIcon',
+      name: 'Neon Database',
+      description: 'Serverless Postgres database for developers.',
+      logo: 'NeonDatabase',
     },
     {
-      name: 'Super JSON',
-      description: 'not just json!',
-      logo: 'NoniconsJson16',
+      name: 'DateFns',
+      description: 'Modern JavaScript date utility library.',
+      logo: 'DateFns',
     },
     {
-      name: 'Magic Regexp (Removed)',
-      description: 'A compiled-away, type-safe, readable RegExp alternative',
-      logo: 'UnjsMagicRegexp',
+      name: 'Lodash',
+      description: 'A modern JavaScript utility library delivering modularity.',
+      logo: 'Lodash',
     },
     {
-      name: 'Uploadthing',
-      description: 'UploadThing is the easiest way to file uploads.',
-      logo: 'UploadthingIcon',
+      name: 'Framer Motion',
+      description: 'A production-ready motion library for React.',
+      logo: 'FramerMotion',
+    },
+    {
+      name: 'CommitLint',
+      description: 'Lint your commit messages to ensure consistency.',
+      logo: 'CommitLint',
+    },
+    {
+      name: 'ESLint',
+      description: 'Find and fix problems in your JavaScript code.',
+      logo: 'ESLint',
+    },
+    {
+      name: 'Prettier',
+      description: 'An opinionated code formatter.',
+      logo: 'Prettier',
+    },
+    {
+      name: 'Gulp',
+      description: 'A toolkit to automate & enhance your workflow.',
+      logo: 'Gulp',
+    },
+    {
+      name: 'Husky',
+      description: 'Git hooks made easy.',
+      logo: 'Husky',
+    },
+    {
+      name: 'Lint Staged',
+      description: 'Run linters on git staged files.',
+      logo: 'LintStaged',
+    },
+    {
+      name: 'TypeScript',
+      description: 'A strongly typed programming language for JavaScript.',
+      logo: 'TypeScript',
+    },
+    {
+      name: 'Lucid Icons',
+      description: 'A collection of beautifully crafted icons.',
+      logo: 'LucidIcons',
+    },
+    {
+      name: 'Radix UI',
+      description: 'Accessible, high-quality UI components for React.',
+      logo: 'RadixUi',
+    },
+    {
+      name: 'Nuqs',
+      description: 'Type-safe search params state manager for React',
+      logo: 'Nuqs',
     },
   ];
 });

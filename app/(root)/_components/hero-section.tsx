@@ -27,7 +27,7 @@ export const HeroSection: FC = async () => {
           </div>
           <SparklesText sparklesCount={4} text="Amin Brings" />
           <h1 className="mt-5 text-center text-3xl font-bold text-balance sm:text-5xl md:text-5xl">
-            A Nextjs, Better Auth, Drizzle Boilerplate
+            [ʔaˈmiːn] Brings is A Nextjs, Better Auth, Drizzle Boilerplate
           </h1>
           <p className="text-muted-foreground mt-4 text-center text-balance md:text-lg lg:text-xl">
             A Next.js boilerplate with better authentication and Drizzle
@@ -51,7 +51,7 @@ export const HeroSection: FC = async () => {
         <div
           className={cn(
             'relative mb-10 grid place-items-center',
-            'before:animate-image-glow before:absolute before:top-32 before:right-32 before:bottom-1/2 before:left-32 before:h-full before:[background-image:linear-gradient(to_bottom,var(--color-one),var(--color-one),transparent_40%)] before:opacity-0 before:[filter:blur(180px)] rounded-t-xl',
+            'before:animate-image-glow before:absolute before:top-32 before:right-32 before:bottom-1/2 before:left-32 before:h-full before:[background-image:linear-gradient(to_bottom,var(--color-two),var(--color-one),transparent_40%)] before:opacity-0 before:[filter:blur(180px)] rounded-t-xl',
           )}
         >
           <ShineBorder color={['var(--color-one)']}>

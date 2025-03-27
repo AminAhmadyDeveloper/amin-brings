@@ -12,6 +12,7 @@ import { mono, sans } from '@/libraries/font-utils';
 import { cn } from '@/libraries/tailwind-utils';
 import { ConfirmDialogProvider } from '@/providers/confirm-dialog-provider';
 import { SessionProvider } from '@/providers/session-provider';
+import { SSROnlySecretProvider } from '@/providers/ssr-only-secret-provider';
 import { StylesProvider } from '@/providers/styles-provider';
 import { ThemeProvider } from '@/providers/theme-provider';
 import { TRPCProvider } from '@/providers/trpc-provider';
@@ -42,9 +43,11 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
         <SessionProvider session={session}>
           <ConfirmDialogProvider>
             <NuqsAdapter>
-              <TRPCProvider ssrOnlySecret={encryptedCookie}>
-                <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
-              </TRPCProvider>
+              <SSROnlySecretProvider>
+                <TRPCProvider encryptedCookie={encryptedCookie}>
+                  <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+                </TRPCProvider>
+              </SSROnlySecretProvider>
             </NuqsAdapter>
           </ConfirmDialogProvider>
         </SessionProvider>
