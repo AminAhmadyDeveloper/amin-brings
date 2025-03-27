@@ -1,8 +1,7 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { captcha, phoneNumber } from 'better-auth/plugins';
+import { phoneNumber } from 'better-auth/plugins';
 
-import { env } from '@/libraries/environment-utils';
 import { database } from '@/server/database';
 import * as schema from '@/server/database/schema';
 
@@ -23,10 +22,6 @@ export const auth = betterAuth({
         getTempEmail: (phoneNumber) => `${phoneNumber}@temp.com`,
         getTempName: (phoneNumber) => phoneNumber,
       },
-    }),
-    captcha({
-      provider: 'cloudflare-turnstile',
-      secretKey: env.TURNSTILE_SECRET_KEY,
     }),
   ],
 });

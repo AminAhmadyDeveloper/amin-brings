@@ -171,6 +171,8 @@ function Calendar({
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      locale={undefined as any}
       className={cn('p-3', className)}
       style={{
         width: 248.8 * (columnsDisplayed ?? 1) + 'px',
