@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @plugin 'tailwindcss-animate';
 
+@source "../node_modules/@daveyplate/better-auth-ui";
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
@@ -37,10 +39,10 @@
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
 
-  --color-one: oklch(47.76% 0.0813 202.78);
-  --color-one-30: oklch(47.76% 0.0813 202.78 / 30%);
-  --color-two: oklch(66.98% 0.0882 196.21);
-  --color-three: oklch(80.94% 0.0515 204);
+  --color-one: oklch(66.91% 0.1885 40.77);
+  --color-one-30: oklch(66.91% 0.1885 40.77 / 30%);
+  --color-two: oklch(66.91% 0.1597 40.77);
+  --color-three: oklch(66.91% 0.2256 40.77);
 }
 
 [data-theme='dark'] {
@@ -76,10 +78,10 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
 
-  --color-one: oklch(47.76% 0.0813 202.78);
-  --color-one-30: oklch(47.76% 0.0813 202.78 / 30%);
-  --color-two: oklch(66.98% 0.0882 196.21);
-  --color-three: oklch(80.94% 0.0515 204);
+  --color-one: oklch(66.91% 0.1885 40.77);
+  --color-one-30: oklch(66.91% 0.1885 40.77 / 30%);
+  --color-two: oklch(66.91% 0.1597 40.77);
+  --color-three: oklch(66.91% 0.2256 40.77);
 }
 
 @theme inline {

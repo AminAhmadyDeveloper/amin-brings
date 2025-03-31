@@ -2,10 +2,11 @@ import type { MetadataRoute } from 'next';
 
 const manifest = (): MetadataRoute.Manifest => {
   return {
-    name: 'Salonam',
-    short_name: 'Salonam',
-    description: 'CRM and reminder app for your business',
-    id: 'aminahmady.salonam.app',
+    name: 'Amin Brings',
+    short_name: 'Amin Brings',
+    description:
+      'Open Source Next.js Boilerplate with trpc, tailwindcss, better-auth',
+    id: 'aminahmady.brings.app',
     launch_handler: {
       client_mode: ['navigate-existing', 'auto'],
     },
@@ -42,9 +43,9 @@ const manifest = (): MetadataRoute.Manifest => {
         type: 'image/png',
       },
     ],
-    theme_color: '#df2d50',
-    background_color: '#df2d50',
-    start_url: '/dashboard',
+    theme_color: '#000000',
+    background_color: '#000000',
+    start_url: '/',
     display: 'standalone',
     orientation: 'portrait',
     display_override: ['window-controls-overlay'],
@@ -53,14 +54,9 @@ const manifest = (): MetadataRoute.Manifest => {
     lang: 'fa',
     shortcuts: [
       {
-        name: 'مشتری جدید',
-        url: '/dashboard/new-customer',
-        description: 'مشتری جدید',
-      },
-      {
-        name: 'نوبت جدید',
-        url: '/dashboard/new-reservation',
-        description: 'نوبت جدید',
+        name: 'Home',
+        url: '/',
+        description: 'Home Page',
       },
     ],
     categories: ['business', 'utilities'],

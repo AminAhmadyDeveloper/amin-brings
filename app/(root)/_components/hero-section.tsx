@@ -21,7 +21,7 @@ export const HeroSection: FC = async () => {
           <div className="mb-10 flex items-center justify-center gap-3">
             <Link href="/">
               <AnimatedShinyText className="flex items-center px-4 py-1">
-                Amin Brings
+                Project Github Repository
               </AnimatedShinyText>
             </Link>
           </div>
@@ -43,7 +43,9 @@ export const HeroSection: FC = async () => {
             effect="shineHover"
             className="cursor-pointer"
           >
-            <Link href={session?.session ? '/dashboard' : '/login'}>
+            <Link
+              href={session?.session ? '/dashboard' : '/authentication/sign-in'}
+            >
               Get Started
             </Link>
           </EnhancedButton>

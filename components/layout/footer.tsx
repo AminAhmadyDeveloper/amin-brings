@@ -1,7 +1,7 @@
 import { CodeIcon } from 'lucide-react';
 import type { FC } from 'react';
 
-import { ThemeSwitcher } from '@/components/layout/theme-switcher';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { cn } from '@/libraries/tailwind-utils';
 
 const twitterUrl = 'https://twitter.com/MorningStartHero';
@@ -19,7 +19,7 @@ export const Footer: FC<ReactHtmlElement> = ({ className, ...props }) => {
           .
         </p>
         <div className="ms-auto">
-          <ThemeSwitcher />
+          <ThemeToggle />
         </div>
       </div>
     </footer>

@@ -1,10 +1,13 @@
 'use client';
 
-import { MenuSquareIcon, StarIcon } from 'lucide-react';
-import { type FC, Fragment } from 'react';
+import { UserButton } from '@daveyplate/better-auth-ui';
+
+import { MenuSquareIcon } from 'lucide-react';
+import type { FC } from 'react';
 
 import Link from 'next/link';
 
+import { Logo } from '@/components/svg/logo';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -14,9 +17,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { For } from '@/components/utils/for';
 import { Show } from '@/components/utils/show';
-import { Switcher } from '@/components/utils/switcher';
 import { cn } from '@/libraries/tailwind-utils';
-import { useSession } from '@/providers/session-provider';
 
 const routes: { name: string; href: string }[] = [
   { name: 'Home', href: '/' },
@@ -29,8 +30,6 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
-  const session = useSession();
-
   return (
     <div className="bg-background/5 sticky top-0 z-50 border-b backdrop-blur-lg">
       <header className={cn(className, 'px-2 py-4 transition-all lg:py-4')}>
@@ -62,11 +61,11 @@ export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
             </DropdownMenu>
           </Show>
           <Link
-            className="flex items-center justify-center text-xl font-medium"
+            className="flex items-center justify-center font-mono text-xl font-medium"
             href="/"
           >
-            <StarIcon className="me-2 size-5" />
-            Amin Brings
+            <Logo className="me-2 size-5" />
+            <span>Amin Brings</span>
           </Link>
           <Show show={!hideNavigationMenu}>
             <nav className="ms-10 hidden gap-4 sm:gap-6 md:flex">
@@ -86,12 +85,16 @@ export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
             </nav>
           </Show>
           <div className="ms-auto flex gap-2">
-            <Switcher next={!!session?.session}>
-              <Button asChild>
-                <Link href="/login">Login</Link>
-              </Button>
-              <Fragment />
-            </Switcher>
+            <UserButton
+              className="size-9 text-xs"
+              classNames={{
+                content: {
+                  avatar: {
+                    base: 'size-9 text-xs',
+                  },
+                },
+              }}
+            />
           </div>
         </div>
       </header>

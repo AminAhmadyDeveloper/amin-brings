@@ -1,4 +1,3 @@
-import type { InferSelectModel } from 'drizzle-orm';
 import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const user = pgTable('user', {
@@ -9,11 +8,7 @@ export const user = pgTable('user', {
   image: text('image'),
   createdAt: timestamp('created_at').notNull(),
   updatedAt: timestamp('updated_at').notNull(),
-  phoneNumber: text('phone_number').unique(),
-  phoneNumberVerified: boolean('phone_number_verified'),
 });
-
-export type SelectUser = InferSelectModel<typeof user>;
 
 export const session = pgTable('session', {
   id: text('id').primaryKey(),

@@ -1,6 +1,5 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { phoneNumber } from 'better-auth/plugins';
 
 import { database } from '@/server/database';
 import * as schema from '@/server/database/schema';
@@ -11,17 +10,6 @@ export const auth = betterAuth({
     schema: schema,
   }),
   emailAndPassword: {
-    enabled: false,
+    enabled: true,
   },
-  plugins: [
-    phoneNumber({
-      sendOTP: ({ phoneNumber, code }) => {
-        console.log({ phoneNumber, code });
-      },
-      signUpOnVerification: {
-        getTempEmail: (phoneNumber) => `${phoneNumber}@temp.com`,
-        getTempName: (phoneNumber) => phoneNumber,
-      },
-    }),
-  ],
 });

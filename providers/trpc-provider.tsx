@@ -1,7 +1,6 @@
 'use client';
 
 import { httpBatchLink } from '@trpc/client';
-import { readSSROnlySecret } from 'ssr-only-secrets';
 import SuperJSON from 'superjson';
 
 import { createTRPCReact } from '@trpc/react-query';
@@ -9,6 +8,7 @@ import { useEffect, useState } from 'react';
 import type { FC, PropsWithChildren } from 'react';
 
 import { getUrl } from '@/libraries/server-utils';
+import { readSSROnlySecret } from '@/libraries/ssr-only-secrets';
 import { getQueryClient } from '@/libraries/tanstack-query-utils';
 import { useSSROnlySecret } from '@/providers/ssr-only-secret-provider';
 import { TanstackQueryProvider } from '@/providers/tanstack-query-provider';

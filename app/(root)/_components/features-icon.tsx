@@ -558,6 +558,27 @@ export const ReactHookForm: FC<SVGProps<SVGSVGElement>> = (props) => {
   );
 };
 
+export const BetterAuthUi: FC<SVGProps<SVGSVGElement>> = (props) => {
+  return (
+    <svg
+      className="h-5 w-5"
+      fill="none"
+      height={45}
+      viewBox="0 0 60 45"
+      width={60}
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        className="fill-current"
+        clipRule="evenodd"
+        d="M0 0H15V45H0V0ZM45 0H60V45H45V0ZM20 0H40V15H20V0ZM20 30H40V45H20V30Z"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
+
 export const FeaturesIcon: FC<{ iconName: string; className?: string }> = ({
   iconName,
   className,
@@ -621,6 +642,8 @@ export const FeaturesIcon: FC<{ iconName: string; className?: string }> = ({
       return <ShadcnUi className={className} />;
     case 'ReactHookForm':
       return <ReactHookForm className={className} />;
+    case 'BetterAuthUi':
+      return <BetterAuthUi className={className} />;
     default:
       return <React className={className} />;
   }

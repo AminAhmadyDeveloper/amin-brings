@@ -24,6 +24,12 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'BetterAuth',
     },
     {
+      name: 'Better Auth UI',
+      description:
+        'Beautiful authentication UI for your app, fully auto generated.',
+      logo: 'BetterAuthUi',
+    },
+    {
       name: 'Database',
       description: 'Drizzle with postgres database',
       logo: 'DrizzleOrm',
