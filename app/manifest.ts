@@ -49,7 +49,7 @@ const manifest = (): MetadataRoute.Manifest => {
     display: 'standalone',
     orientation: 'portrait',
     display_override: ['window-controls-overlay'],
-    dir: 'rtl',
+    dir: 'ltr',
     scope: '/',
     lang: 'fa',
     shortcuts: [

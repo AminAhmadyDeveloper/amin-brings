@@ -171,7 +171,7 @@ const ConfirmDialogContent: React.FC<{
         <AlertDialogHeader {...alertDialogHeader}>
           {renderTitle()}
           {description && (
-            <AlertDialogDescription dir="rtl" {...alertDialogDescription}>
+            <AlertDialogDescription dir="ltr" {...alertDialogDescription}>
               {description}
             </AlertDialogDescription>
           )}

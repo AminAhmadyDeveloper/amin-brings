@@ -2,6 +2,7 @@ import {
   AnvilIcon,
   AtSignIcon,
   CloudLightningIcon,
+  PieChartIcon,
   WebhookIcon,
 } from 'lucide-react';
 import { type FC, type SVGProps } from 'react';
@@ -644,6 +645,8 @@ export const FeaturesIcon: FC<{ iconName: string; className?: string }> = ({
       return <ReactHookForm className={className} />;
     case 'BetterAuthUi':
       return <BetterAuthUi className={className} />;
+    case 'Recharts':
+      return <PieChartIcon className={className} />;
     default:
       return <React className={className} />;
   }

@@ -1,12 +1,20 @@
-import includes from 'lodash.includes';
+import concat from 'lodash.concat';
+import find from 'lodash.find';
+import map from 'lodash.map';
 
 import { useEffect, useState } from 'react';
 
 import { usePathname } from 'next/navigation';
 
+import { dashboardSidebarData } from '@/app/dashboard/_components/dashboard-sidebar';
+
 export interface ActivePath {
-  title: 'Dashboard' | 'Become Pro';
-  path: '/dashboard' | '/dashboard/become-pro';
+  title: 'Dashboard' | 'Account' | 'My Information' | 'Support' | 'Feedback';
+  path:
+    | '/dashboard'
+    | '/dashboard/account/my-information'
+    | '/support'
+    | '/feedback';
 }
 
 const defaultActivePath: ActivePath = {
@@ -20,15 +28,21 @@ export const useActivePath = () => {
 
   useEffect(() => {
     if (pathname) {
-      if (includes(pathname, 'become-pro')) {
+      const allPaths = concat(
+        ...map(dashboardSidebarData.navMain, (item) => {
+          if (item?.children?.length) {
+            return item.children;
+          } else {
+            return [item];
+          }
+        }),
+        dashboardSidebarData.navSecondary,
+      );
+      const active = find(allPaths, (item) => item.href === pathname);
+      if (active) {
         setActivePath({
-          path: '/dashboard/become-pro',
-          title: 'Become Pro',
-        });
-      } else {
-        setActivePath({
-          path: '/dashboard',
-          title: 'Dashboard',
+          path: active?.href,
+          title: active?.title,
         });
       }
     }

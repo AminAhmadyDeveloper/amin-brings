@@ -54,7 +54,7 @@
     "lodash.find": "^4.6.0",
     "lodash.includes": "^4.3.0",
     "lodash.map": "^4.6.0",
-    "lucide-react": "^0.485.0",
+    "lucide-react": "^0.486.0",
     "next": "15.3.0-canary.21",
     "next-themes": "^0.4.6",
     "nuqs": "^2.4.1",

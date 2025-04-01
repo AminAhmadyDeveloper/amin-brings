@@ -35,6 +35,12 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'DrizzleOrm',
     },
     {
+      name: 'Recharts',
+      description:
+        'A composable charting library built on React components, lightweight and easy to use charts',
+      logo: 'Recharts',
+    },
+    {
       name: 'TypeSafe Backend',
       description: 'Preserve type safety from backend to frontend with tRPC',
       logo: 'TRPC',

@@ -20,6 +20,7 @@ export const BetterAuthUiProvider: FC<PropsWithChildren> = ({ children }) => {
       onSessionChange={router.refresh}
       LinkComponent={Link}
       basePath="/authentication"
+      settingsUrl="/dashboard/account/my-information"
     >
       {children}
     </AuthUIProviderTanstack>
