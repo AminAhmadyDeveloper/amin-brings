@@ -5,10 +5,14 @@ import React from 'react';
 
 import { useTheme } from 'next-themes';
 
+import { useIsMounted } from '@/hooks/use-is-mounted';
 import { cn } from '@/libraries/tailwind-utils';
 
 export const ThemeToggle = () => {
   const { setTheme, theme } = useTheme();
+  const isMounted = useIsMounted();
+
+  if (!isMounted) return null;
 
   return (
     <div

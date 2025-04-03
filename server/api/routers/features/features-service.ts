@@ -78,6 +78,11 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'NeonDatabase',
     },
     {
+      name: 'Dnd Kit',
+      description: 'A set of utilities to create drag and drop interfaces.',
+      logo: 'DndKit',
+    },
+    {
       name: 'DateFns',
       description: 'Modern JavaScript date utility library.',
       logo: 'DateFns',
