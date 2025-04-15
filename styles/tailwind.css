@@ -3,6 +3,9 @@
 
 @source "../node_modules/@daveyplate/better-auth-ui";
 
+@import 'uploadthing/tw/v4';
+@source "../node_modules/@uploadthing/react/dist"; /** <-- depends on your project structure */
+
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {

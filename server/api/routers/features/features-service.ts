@@ -35,6 +35,12 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'DrizzleOrm',
     },
     {
+      name: 'Uploadthing',
+      description:
+        'UploadThing is the easiest way to add file uploads to your full stack TypeScript application.',
+      logo: 'Uploadthing',
+    },
+    {
       name: 'Recharts',
       description:
         'A composable charting library built on React components, lightweight and easy to use charts',
