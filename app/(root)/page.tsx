@@ -10,7 +10,7 @@ import { ReviewsList } from '@/app/(root)/_components/reviews-list';
 
 const MainPage: NextPage = async () => {
   return (
-    <main>
+    <main className="pt-14">
       <div className="container">
         <BackgroundParticles />
         <HeroSection />

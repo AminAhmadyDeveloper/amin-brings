@@ -2,21 +2,14 @@
 
 import { UserButton } from '@daveyplate/better-auth-ui';
 
-import { MenuSquareIcon } from 'lucide-react';
-import type { FC } from 'react';
+import { MenuIcon, XIcon } from 'lucide-react';
+import { type FC, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
 import { Logo } from '@/components/svg/logo';
 import { Button } from '@/components/ui/button';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 import { For } from '@/components/utils/for';
-import { Show } from '@/components/utils/show';
 import { cn } from '@/libraries/tailwind-utils';
 
 const routes: { name: string; href: string }[] = [
@@ -24,80 +17,127 @@ const routes: { name: string; href: string }[] = [
   { name: 'Dashboard', href: '/dashboard' },
 ] as const;
 
-interface HeaderProps {
-  hideNavigationMenu?: true;
-  className?: string;
-}
+export const Header: FC<ReactHeader> = (props) => {
+  const [menuState, setMenuState] = useState<'active' | 'no-active'>(
+    'no-active',
+  );
+  const [isScrolled, setIsScrolled] = useState(false);
 
-export const Header: FC<HeaderProps> = ({ hideNavigationMenu, className }) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="bg-background/5 sticky top-0 z-50 border-b backdrop-blur-lg">
-      <header className={cn(className, 'px-2 py-4 transition-all lg:py-4')}>
-        <div className="flex items-center gap-2 p-0">
-          <Show show={!hideNavigationMenu}>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+    <header {...props}>
+      <nav data-state={menuState} className="fixed z-50 w-full px-2">
+        <div
+          className={cn(
+            'container mx-auto mt-2 px-6 transition-all duration-300 lg:px-12',
+            {
+              'bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg lg:px-5':
+                isScrolled,
+            },
+          )}
+        >
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            <div className="flex w-full justify-between lg:w-auto">
+              <Link
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2"
+              >
+                <Logo />
+              </Link>
+
+              <div className="flex items-center gap-x-5">
+                <div className="flex w-full flex-col space-y-3 lg:hidden">
+                  <UserButton
+                    className="size-9 text-xs"
+                    classNames={{
+                      content: {
+                        avatar: {
+                          base: 'size-9 text-xs',
+                        },
+                      },
+                    }}
+                  />
+                </div>
                 <Button
-                  className="focus:ring-1 focus:outline-none md:hidden"
-                  size="icon"
-                  variant="outline"
+                  onClick={() =>
+                    setMenuState((prev) => {
+                      return prev === 'active' ? 'no-active' : 'active';
+                    })
+                  }
+                  aria-label={
+                    menuState == 'active' ? 'Close Menu' : 'Open Menu'
+                  }
+                  className="relative -m-2.5 -mr-4 block cursor-pointer rounded-full p-2.5 lg:hidden"
+                  variant="secondary"
                 >
-                  <MenuSquareIcon className="size-5" />
+                  <MenuIcon className="m-auto size-6 duration-200 in-data-[state=active]:scale-0 in-data-[state=active]:rotate-180 in-data-[state=active]:opacity-0" />
+                  <XIcon className="absolute inset-0 m-auto size-6 scale-0 -rotate-180 opacity-0 duration-200 in-data-[state=active]:scale-100 in-data-[state=active]:rotate-0 in-data-[state=active]:opacity-100" />
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
-                <div className="py-1">
+              </div>
+            </div>
+
+            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+              <ul className="flex gap-8 text-sm">
+                <For each={routes}>
+                  {(route) => {
+                    return (
+                      <li key={route.href}>
+                        <Link
+                          href={route.href}
+                          className="text-muted-foreground block duration-150 hover:text-accent-foreground"
+                        >
+                          <span>{route.name}</span>
+                        </Link>
+                      </li>
+                    );
+                  }}
+                </For>
+              </ul>
+            </div>
+
+            <div className="bg-background mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 in-data-[state=active]:block md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none lg:in-data-[state=active]:flex dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
                   <For each={routes}>
                     {(route) => {
                       return (
-                        <DropdownMenuItem key={route.name} asChild>
-                          <Link href={route.href}>{route.name}</Link>
-                        </DropdownMenuItem>
+                        <li key={route.href}>
+                          <Link
+                            href={route.href}
+                            className="text-muted-foreground block duration-150 hover:text-accent-foreground"
+                          >
+                            <span>{route.name}</span>
+                          </Link>
+                        </li>
                       );
                     }}
                   </For>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </Show>
-          <Link
-            className="flex items-center justify-center font-mono text-xl font-medium"
-            href="/"
-          >
-            <Logo className="me-2 size-5" />
-            <span>Amin Brings</span>
-          </Link>
-          <Show show={!hideNavigationMenu}>
-            <nav className="ms-10 hidden gap-4 sm:gap-6 md:flex">
-              <For each={routes}>
-                {(route) => {
-                  return (
-                    <Link
-                      key={route.name}
-                      className="hover:text-muted-foreground text-sm font-medium transition-colors"
-                      href={route.href}
-                    >
-                      {route.name}
-                    </Link>
-                  );
-                }}
-              </For>
-            </nav>
-          </Show>
-          <div className="ms-auto flex gap-2">
-            <UserButton
-              className="size-9 text-xs"
-              classNames={{
-                content: {
-                  avatar: {
-                    base: 'size-9 text-xs',
-                  },
-                },
-              }}
-            />
+                </ul>
+              </div>
+              <div className="hidden w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:flex">
+                <UserButton
+                  className="size-9 text-xs"
+                  classNames={{
+                    content: {
+                      avatar: {
+                        base: 'size-9 text-xs',
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </header>
-    </div>
+      </nav>
+    </header>
   );
 };

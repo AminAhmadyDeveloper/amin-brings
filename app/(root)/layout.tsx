@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/header';
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Fragment>
-      <Header className="container" />
+      <Header />
       {children}
       <Footer className="container" />
     </Fragment>

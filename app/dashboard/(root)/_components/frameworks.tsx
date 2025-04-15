@@ -37,7 +37,7 @@ import {
 import { For } from '@/components/utils/for';
 import { cn } from '@/libraries/tailwind-utils';
 
-export const Notes = () => {
+export const Frameworks = () => {
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
@@ -116,7 +116,10 @@ const SortableLinks: FC<SortableLinkCardProps> = ({ id }) => {
         <Button
           {...attributes}
           {...listeners}
-          className={cn(isCursorGrabbing ? 'cursor-grabbing' : 'cursor-grab')}
+          className={cn(
+            'touch-none',
+            isCursorGrabbing ? 'cursor-grabbing' : 'cursor-grab',
+          )}
           aria-describedby={`DndContext-${uniqueId}`}
           size="icon"
           variant="ghost"

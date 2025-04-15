@@ -1,6 +1,7 @@
 'use client';
 
 import { ComputerIcon, MoonIcon, SunIcon } from 'lucide-react';
+import type { FC } from 'react';
 import React from 'react';
 
 import { useTheme } from 'next-themes';
@@ -8,7 +9,7 @@ import { useTheme } from 'next-themes';
 import { useIsMounted } from '@/hooks/use-is-mounted';
 import { cn } from '@/libraries/tailwind-utils';
 
-export const ThemeToggle = () => {
+export const ThemeToggle: FC<ReactDiv> = ({ className, ...props }) => {
   const { setTheme, theme } = useTheme();
   const isMounted = useIsMounted();
 
@@ -16,8 +17,11 @@ export const ThemeToggle = () => {
 
   return (
     <div
-      className="inline-flex items-center rounded-full border p-1"
-      data-theme-toggle=""
+      className={cn(
+        className,
+        'inline-flex items-center rounded-full border p-1',
+      )}
+      {...props}
     >
       <button
         aria-label="light"
