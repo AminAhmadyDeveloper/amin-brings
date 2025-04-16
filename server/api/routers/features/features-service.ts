@@ -89,6 +89,12 @@ export const listOfFeatures = publicProcedure.query(() => {
       logo: 'DndKit',
     },
     {
+      name: 'Video Player',
+      description:
+        'vidstack supports videos from your source, vimo, youtube and more',
+      logo: 'VidStack',
+    },
+    {
       name: 'DateFns',
       description: 'Modern JavaScript date utility library.',
       logo: 'DateFns',
